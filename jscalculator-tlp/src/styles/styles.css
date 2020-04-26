@@ -50,7 +50,7 @@ body {
 /* Calculator */
 .calculator {
     height: 80vh;
-    width: 25%;
+    width: 40%;
     box-shadow: 0 2rem 4rem var(--shadow);
     background-color: var(--color-light-black);
 }
