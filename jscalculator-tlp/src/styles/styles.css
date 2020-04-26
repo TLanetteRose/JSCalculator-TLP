@@ -45,3 +45,90 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+
+/* Calculator */
+.calculator {
+    height: 80vh;
+    width: 40%;
+    box-shadow: 0 2rem 4rem var(--shadow);
+    background-color: var(--color-light-black);
+}
+
+
+/* Screen */
+.result-screen {
+    height: 19vh;
+    font-size: 8rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.formula-screen {
+    height: 6vh;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.screen {
+    height: 25vh;
+    width: 100%;
+    padding: 0 2rem;
+    overflow: hidden;
+    white-space: no-wrap;
+    color: var(--color-light-lilac);
+    background-color: var(--color-pink);
+}
+
+/* Keypad */
+
+.keypad__row {
+    height: 11vh; /* (80vh calculator - 25vh screen)/ 5 keypadRow components = 11vh */
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.keypad {
+    height: 55vh;
+    width: 100%;
+}
+
+.btn {
+    width: 25%;
+    height: 100%;
+    font-size: 3rem;
+    font-family: inherit;
+    background-color: var(--color-light-lilac);
+    border: 1px solid transparent;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+}
+
+.btn:hover {
+    color: var(--color-white);
+    background-color: var(--color-deep-purple);
+}
+
+.btn:active {
+    transfor: scale(.95);
+}
+
+.btn--large {
+    width: 50%;
+    color: var(--color-white);
+    background-color: var(--color-pink);
+    transition: all .2s;
+}
+
+.btn--large:hover {
+    background-color: var(--color-deep-purple);
+    color: var(--color-white);
+}
