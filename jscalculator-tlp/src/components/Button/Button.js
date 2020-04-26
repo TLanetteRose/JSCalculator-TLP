@@ -2,12 +2,9 @@ import React from 'react';
 
 const button = (props) => {
     const classes = ['btn'];
-
-    if (typeof props !== 'undefined' && typeof props.type !== 'undefined') 
-        classes.push('btn--' + props.type);
-
-return (
-        <button id={props.id} className={classes.join (' ')}>
+    if (typeof props !== 'undefined' && typeof props.type !== 'undefined') classes.push('btn--' + props.type);
+    return(
+        <button id={props.id} className={classes.join(' ')}>
             {props.children}
         </button>
     );

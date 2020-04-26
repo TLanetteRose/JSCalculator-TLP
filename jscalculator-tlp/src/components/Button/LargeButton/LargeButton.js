@@ -3,6 +3,6 @@ import React from 'react';
 import Button from '../Button';
 
 const largeButton = (props) => 
-    <Button type='large' id={props.id} {...props} />;
+    <Button type="large" {...props} />;
 
 export default largeButton;
