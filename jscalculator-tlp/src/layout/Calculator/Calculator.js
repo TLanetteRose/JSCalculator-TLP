@@ -143,7 +143,8 @@ class Calculator extends React.Component {
     render () {
         return (
             <main className="calculator">
-                <Screen formula={this.state.formula.replace(/x/g, ".")}  currentVal={this.state.currentVal} />
+                <Screen 
+                formula={this.stateformula}  currentVal={this.state.currentVal} />
                 <Keypad 
                     decimal={this.handleDecimal}
                     evaluate={this.handleEvaluate}
