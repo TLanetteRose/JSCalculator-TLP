@@ -83,3 +83,17 @@ body {
     color: var(--color-light-lilac);
     background-color: var(--color-lilac);
 }
+
+/* Keypad */
+
+.keypad__row {
+    height: 11vh; /* (80vh calculator - 25vh screen)/ 5 keypadRow components = 11vh */
+    width: 100%;
+    display: flex;
+    color: white;
+}
+
+.keypad {
+    height: 55vh;
+    width: 100%;
+}
