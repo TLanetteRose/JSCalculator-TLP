@@ -81,7 +81,7 @@ body {
     overflow: hidden;
     white-space: no-wrap;
     color: var(--color-light-lilac);
-    background-color: var(--color-lilac);
+    background-color: var(--color-pink);
 }
 
 /* Keypad */
@@ -96,4 +96,39 @@ body {
 .keypad {
     height: 55vh;
     width: 100%;
+}
+
+.btn {
+    width: 25%;
+    height: 100%;
+    font-size: 3rem;
+    font-family: inherit;
+    background-color: var(--color-light-lilac);
+    border: 1px solid transparent;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .2s;
+}
+
+.btn:hover {
+    color: var(--color-white);
+    background-color: var(--color-deep-purple);
+}
+
+.btn:active {
+    transfor: scale(.95);
+}
+
+.btn--large {
+    width: 50%;
+    color: var(--color-white);
+    background-color: var(--color-pink);
+    transition: all .2s;
+}
+
+.btn--large:hover {
+    background-color: var(--color-deep-purple);
+    color: var(--color-white);
 }
