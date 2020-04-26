@@ -1,10 +1,12 @@
 import React from 'react';
 
+class FormulaScreen extends React.Component {
+    render() {
+        return <div className="formula-screen">
+            {this.props.formula} 
+            </div>;
+    }
+}
 
-const formulaScreen = () => (
-    <div className="formula-screen">
-        3000 + 100 + 20 + 4
-    </div>
-);
 
-export default formulaScreen;
+export default FormulaScreen;

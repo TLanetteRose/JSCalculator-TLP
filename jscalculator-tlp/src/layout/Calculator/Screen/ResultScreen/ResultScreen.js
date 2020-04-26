@@ -1,10 +1,15 @@
 import React from 'react';
 
+class ResultScreen extends React.Component {
+    render() {
+        return (
+            <div className="result-screen"
+            id = "display">
+               {this.props.currentValue}
+            </div>
+        );
+    }
+}
 
-const resultScreen = () => (
-    <div className="result-screen" id="display">
-        3124
-    </div>
-);
 
-export default resultScreen;
+export default ResultScreen;
