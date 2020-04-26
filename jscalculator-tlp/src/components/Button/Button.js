@@ -7,7 +7,7 @@ const button = (props) => {
         classes.push('btn--' + props.type);
 
 return (
-        <button className={classes.join (' ')}>
+        <button id={props.id} className={classes.join (' ')}>
             {props.children}
         </button>
     );

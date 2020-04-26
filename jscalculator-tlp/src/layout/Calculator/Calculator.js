@@ -16,7 +16,7 @@ class Calculator extends React.Component {
         this.state = {
             currentVal: "0",
             prevVal: "0",
-            formula: "",
+            formula: " ",
             currentSign: "pos",
             lastClicked: ""
         };
@@ -80,13 +80,60 @@ class Calculator extends React.Component {
         }
     }
 
-    
+    handleNumbers(e){
+        if (!this.state.currentVal.includes("Limit")) {
+            const { currentVal, formula, evaluated } = this.state;
+            const value = e.target.value;
+            this.setState({ evaluated: false });
+            if (currentVal.length > 21) {
+                this.maxDigitWarning();
+            } else if (evaluated) {
+                this.setState({
+                    currentVal: value,
+                    formula: value !== "0" ? value : ""
+                });
+            } else {
+                this.setState ({
+                    currentVal: currentVal === "0" || isOperator.test(currentVal) ? value : currentVal + value, formula: currentVal === "0" && value === "0" ? formula === "" ? value : formula : /([^.0-9]0|^0)$/.test(formula) ? formula.slice(0, -1) + value : formula + value
+                });
+            }
+        }
+    }
+
+    handleDecimal() {
+        if (this.state.evaluated === true) {
+            this.setState({
+                currentVal: "0.",
+                formula: "0.", 
+                evaluated: false
+            });
+        } else if (
+            !this.state.currentVal.includes(".") && !this.state.currentVal.includes("Limit")
+        ) {
+            this.setState({ evaluated: false });
+            if (this.state.currentVal.length > 21){
+                this.maxDigitWarning();
+            } else if (
+                endsWithOperator.test(this.state.formula) || (this.state.currentVal === "0" && this.state.formula === "")
+            ) {
+                this.setState({
+                    currentVal: "0.",
+                    formula: this.state.formula + "0."
+                });
+            } else {
+                this.setState({
+                    currentVal: this.state.formula.match(/(-?\d+\.?\d*)$/)[0] + ".",
+                    formula: this.state.formula + "."
+                });
+            }
+        }
+    }
 
     initialize() {
         this.setState({
             currentVal: "0",
             prevVal: "0",
-            formula: "",
+            formula: " ",
             currentSign: "pos",
             lastClicked: "",
             evaluated: false
