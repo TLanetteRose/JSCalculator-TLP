@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Screen from './Screen/Screen';
+/*import FormulaScreen from './Screen/FormulaScreen/FormulaScreen';
+import ResultScreen from './Screen/ResultScreen/ResultScreen';*/
 import Keypad from './Keypad/Keypad';
 
 // Variables:
@@ -170,8 +171,9 @@ class Calculator extends React.Component {
     render () {
         return (
             <main className="calculator">
-                <Screen 
-                formula={this.stateformula}  currentVal={this.state.currentVal} />
+                <FormulaScreen 
+                formula={this.state.formula.replace(/x/g, ".")}/>
+                <ResultScreen currentValue={this.state.currentVal} />
                 <Keypad onButtonPress={this.onButtonPress}
                     decimal={this.handleDecimal}
                     evaluate={this.handleEvaluate}
@@ -180,6 +182,25 @@ class Calculator extends React.Component {
                     operators={this.handleOperators}
                 />
             </main>
+        );
+    }
+}
+
+
+class ResultScreen extends React.Component {
+    render(){
+        return (
+            <div className="result-screen" id="display">
+                {this.props.currentValue}
+            </div>
+        );
+    }
+}
+class FormulaScreen extends React.Component {
+    render() {
+        return ( <div className="formula-screen">
+            {this.props.formula}
+        </div>
         );
     }
 }

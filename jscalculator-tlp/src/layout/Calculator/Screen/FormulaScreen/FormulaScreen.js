@@ -1,10 +1,10 @@
-import React from 'react';
+/*import React from 'react';
 
 const formulaScreen = (props) => (
     <div className="formula-screen">
-        {props.children}
+        {this.props.formula}
     </div>
 )
 
 
-export default formulaScreen;
+export default formulaScreen; */

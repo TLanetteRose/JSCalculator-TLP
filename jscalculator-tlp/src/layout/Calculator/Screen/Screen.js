@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 import ResultScreen from './ResultScreen/ResultScreen';
 import FormulaScreen from './FormulaScreen/FormulaScreen';
@@ -10,4 +10,4 @@ const screen = (props) => (
     </section>
 );
 
-export default screen;
+export default screen; */
