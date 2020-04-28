@@ -59,30 +59,33 @@ body {
 /* Screen */
 .result-screen {
     height: 19vh;
+    width: 100%;
     font-size: 8rem;
     font-weight: 600;
+    padding: 0 2rem;
+    overflow: hidden;
+    white-space: no-wrap;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    color: var(--color-light-lilac);
+    background-color: var(--color-pink);
 }
 
 .formula-screen {
     height: 6vh;
-    font-size: 2.5rem;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-}
-
-.screen {
-    height: 25vh;
     width: 100%;
+    font-size: 2.5rem;
     padding: 0 2rem;
     overflow: hidden;
     white-space: no-wrap;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
     color: var(--color-light-lilac);
     background-color: var(--color-pink);
 }
+
 
 /* Keypad */
 
@@ -124,11 +127,11 @@ body {
 .btn--large {
     width: 50%;
     color: var(--color-white);
-    background-color: var(--color-pink);
+    background-color: var(--color-deep-purple);
     transition: all .2s;
 }
 
 .btn--large:hover {
-    background-color: var(--color-deep-purple);
+    background-color: var(--color-pink);
     color: var(--color-white);
 }

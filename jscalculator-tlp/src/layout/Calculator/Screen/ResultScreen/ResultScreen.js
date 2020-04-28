@@ -1,10 +1,10 @@
-import React from 'react';
+/*import React from 'react';
 
 const resultScreen = (props) => (
     <div className="result-screen" id="display">
-        {props.children}
+        {this.props.currentValue}
     </div>
 )
 
 
-export default resultScreen;
+export default resultScreen; */
