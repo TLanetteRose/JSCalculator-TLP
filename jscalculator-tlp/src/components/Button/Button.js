@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 const button = (props) => {
     const classes = ['btn'];
@@ -10,4 +10,4 @@ const button = (props) => {
     );
 }
 
-export default button;
+export default button; */

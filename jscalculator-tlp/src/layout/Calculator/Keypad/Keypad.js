@@ -1,8 +1,7 @@
 import React from 'react';
 
 import KeypadRow from './KeypadRow/KeypadRow';
-/*import Button from '../../../components/Button/Button';
-import LargeButton from '../../../components/Button/LargeButton/LargeButton';*/
+import LargeButton from '../../../components/Button/LargeButton/LargeButton';
 
 class Keypad extends React.Component  {
     render(){
@@ -30,7 +29,7 @@ class Keypad extends React.Component  {
                 <button id="six" className="btn"
                     onClick={this.props.numbers} value="6">6</button> 
                 <button id="subtract" className="btn" type="operator"
-                    onClick={this.props.operators}>-</button> 
+                    onClick={this.props.operators} value="-"> - </button> 
             </KeypadRow> 
             {/* row #3 */ } 
             <KeypadRow>
@@ -56,10 +55,12 @@ class Keypad extends React.Component  {
             </KeypadRow> 
             {/* row #5 */ } 
             <KeypadRow>
-                <button id="clear" classname="btn btn--large"
-                    onClick={this.props.initialize} value="C">C</button> 
-                <button id="equals" className="btn btn--large"
-                    onClick={this.props.evaluate} value="="> = </button> 
+                <LargeButton id="clear" className="btn--large"
+                    onClick={this.props.initialize} value="C">C 
+                    </LargeButton> 
+                <LargeButton id = "equals" className="btn--large"
+                    onClick={this.props.evaluate} value="=">= 
+                    </LargeButton> 
             </KeypadRow> 
         </section>
 

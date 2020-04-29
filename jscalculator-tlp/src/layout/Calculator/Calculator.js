@@ -141,32 +141,6 @@ class Calculator extends React.Component {
         });
     }
 
-    /*onButtonPress = event => {
-        let formula = this.state.formula;
-        const pressedButton = event.target.innerHTML;
-
-        if (pressedButton === 'C') return this.clear();
-        else if ((pressedButton >= '0' && pressedButton <= '9') || pressedButton === '.') formula += pressedButton;
-        else if (['+', '-', '*', '/', '%'].indexOf(pressedButton) !== -1) formula += ' ' + pressedButton + ' ';
-        else if (pressedButton === '=') {
-            try {
-                // eslint-disable-next-line
-                const evalResult = eval(formula);
-                const result = Number.isInteger(evalResult) ? evalResult : evalResult.toFixed(2);
-                this.setState({result});
-            }   catch (error) {
-                alert('Invalid Mathematical Formula');
-            }
-        }
-        else {
-            formula = formula.trim();
-            formula = formula.substr(0, formula.length - 1);
-        }
-        this.setState({formula: formula}); 
-    }
-    clear() {
-        this.setState({formula: '', result: 0});
-    }*/
 
     render () {
         return (
