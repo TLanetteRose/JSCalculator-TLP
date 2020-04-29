@@ -141,7 +141,7 @@ class Calculator extends React.Component {
         });
     }
 
-    onButtonPress = event => {
+    /*onButtonPress = event => {
         let formula = this.state.formula;
         const pressedButton = event.target.innerHTML;
 
@@ -166,7 +166,7 @@ class Calculator extends React.Component {
     }
     clear() {
         this.setState({formula: '', result: 0});
-    }
+    }*/
 
     render () {
         return (
@@ -174,7 +174,7 @@ class Calculator extends React.Component {
                 <FormulaScreen 
                 formula={this.state.formula.replace(/x/g, ".")}/>
                 <ResultScreen currentValue={this.state.currentVal} />
-                <Keypad onButtonPress={this.onButtonPress}
+                <Keypad 
                     decimal={this.handleDecimal}
                     evaluate={this.handleEvaluate}
                     initialize={this.initialize}
