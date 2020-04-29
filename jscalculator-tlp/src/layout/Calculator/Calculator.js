@@ -123,7 +123,8 @@ class Calculator extends React.Component {
                 });
             } else {
                 this.setState({
-                    currentVal: this.state.formula.match(/(-?\d+\.?\d*)$/)[0] + ".",
+                    currentVal: 
+                    this.state.formula.match(/(-?\d+\.?\d*)$/)[0] + ".",
                     formula: this.state.formula + "."
                 });
             }
