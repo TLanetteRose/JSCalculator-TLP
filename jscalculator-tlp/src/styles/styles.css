@@ -129,6 +129,12 @@ body {
     color: var(--color-white);
     background-color: var(--color-deep-purple);
     transition: all .2s;
+    font-size: 3rem;
+    font-family: inherit;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn--large:hover {
