@@ -17,7 +17,7 @@ class Calculator extends React.Component {
         this.state = {
             currentVal: "0",
             prevVal: "0",
-            formula: " ",
+            formula: "",
             currentSign: "pos",
             lastClicked: ""
         };
@@ -135,7 +135,7 @@ class Calculator extends React.Component {
         this.setState({
             currentVal: "0",
             prevVal: "0",
-            formula: " ",
+            formula: "",
             currentSign: "pos",
             lastClicked: "",
             evaluated: false
