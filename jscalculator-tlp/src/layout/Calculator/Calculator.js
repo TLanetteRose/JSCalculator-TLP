@@ -1,14 +1,11 @@
 import React from 'react';
-
-/*import FormulaScreen from './Screen/FormulaScreen/FormulaScreen';
-import ResultScreen from './Screen/ResultScreen/ResultScreen';*/
 import Keypad from './Keypad/Keypad';
 
 // Variables:
 
 const isOperator = /[x/+-]/,
     endsWithOperator = /[x+-/]$/,
-    endsWithNegativeSign = /[x/+]-$/;
+    //endsWithNegativeSign = /[x/+]-$/;
 
 // Components 
 class Calculator extends React.Component {
@@ -17,11 +14,11 @@ class Calculator extends React.Component {
         this.state = {
             currentVal: "0",
             prevVal: "0",
-            formula: " ",
+            formula: "",
             currentSign: "pos",
             lastClicked: ""
         };
-        this.maxDigitWarning = this.maxDigitWarning.bind(this);
+        this.handleMaxDigits = this.handleMaxDigits.bind(this);
         this.handleOperators = this.handleOperators.bind(this);
         this.handleEvaluate = this.handleEvaluate.bind(this);
         this.initialize = this.initialize.bind(this);
@@ -29,7 +26,7 @@ class Calculator extends React.Component {
         this.handleNumbers = this.handleNumbers.bind(this);
     }
 
-    maxDigitWarning() {
+    handleMaxDigits() {
         this.setState({
             currentVal: "Too many digits",
             prevVal: this.state.currentVal
@@ -57,47 +54,79 @@ class Calculator extends React.Component {
         }
     }
 
-    handleOperators(e) {
-        if (!this.state.currentVal.includes("Limit")) {
-            const value = e.target.value;
-            const { formula, prevVal, evaluated } = this.state;
-            this.setState({ currentVal: value, evaluated: false });
-            if (evaluated) {
-                this.setState({ formula: prevVal + value });
-            } else if (!endsWithOperator.test(formula)) {
+    handleOperators(e){
+        if (!this.state.currentVal.includes("Limit")){
+            let operate = e.target.value;
+            let { currentVal, formula, prevVal, evaluated } = this.state;
+            this.setState({ evaluated: false });
+            if (currentVal === "0") {
+                this.setState({ currentVal: operate === "+" || operate === "-" ? operate : currentVal, formula: operate === "+" || operate === "-" ? operate : formula })
+            } 
+            else if (evaluated){
+                this.setState({
+                    formula: prevVal + operate,
+                    currentVal: operate
+                })
+            } 
+            else {
+                if (currentVal.length > 21){
+                this.handleMaxDigits();
+                } 
+            else {
+                if (!endsWithOperator.test(formula) || operate === "-"){
                 this.setState({
                     prevVal: formula,
-                    formula: formula + value
-                });
-            } else if (!endsWithNegativeSign.test(formula)) {
-                this.setState({
-                   formula: (endsWithNegativeSign.test(formula + value) ? formula : prevVal) + value
-                });
-            } else if (value !== "-") {
-                this.setState({
-                    formula: prevVal + value
-                });
+                    formula: formula + operate,
+                    currentVal: operate
+                })
+                }
+                else 
+                    if(operate !== "-"){
+                        while(endsWithOperator.test(prevVal)){
+                        prevVal = prevVal.slice(0, prevVal.length - 1)
+                        }
+                        this.setState({
+                        formula: prevVal + operate,
+                        currentVal: operate
+                        })
+                    }
+
+                }
             }
+            console.log(currentVal)
         }
     }
+
 
     handleNumbers(e){
         if (!this.state.currentVal.includes("Limit")) {
             const { currentVal, formula, evaluated } = this.state;
-            const value = e.target.value;
+            const val = e.target.value;
             this.setState({ evaluated: false });
             if (currentVal.length > 21) {
-                this.maxDigitWarning();
-            } else if (evaluated) {
+                this.handleMaxDigits();
+            } 
+            else if (evaluated) {
                 this.setState({
-                    currentVal: value,
-                    formula: value !== "0" ? value : ""
-                });
-            } else {
-                this.setState ({
-                    currentVal: currentVal === "0" || isOperator.test(currentVal) ? value : currentVal + value, formula: currentVal === "0" && value === "0" ? formula === "" ? value : formula : /([^.0-9]0|^0)$/.test(formula) ? formula.slice(0, -1) + value : formula + value
-                });
+                    currentVal: val,
+                    formula: val !== "0" ? val : ""
+                })
             }
+             else {
+                if (currentVal === "0" || isOperator.test(currentVal)){
+                    this.setState({
+                        currentVal: val,
+                        formula: formula === "0" ? val : formula + val 
+                    })
+                }
+                else{
+                    this.setState({
+                        currentVal: currentVal + val, 
+                        formula: formula === "0" ? val : formula + val
+                    })
+                }
+            }
+            console.log(currentVal)
         }
     }
 
@@ -135,7 +164,7 @@ class Calculator extends React.Component {
         this.setState({
             currentVal: "0",
             prevVal: "0",
-            formula: " ",
+            formula: "",
             currentSign: "pos",
             lastClicked: "",
             evaluated: false

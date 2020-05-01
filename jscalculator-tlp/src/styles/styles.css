@@ -121,7 +121,7 @@ body {
 }
 
 .btn:active {
-    transfor: scale(.95);
+    transform: scale(.95);
 }
 
 .btn--large {
@@ -131,13 +131,15 @@ body {
     transition: all .2s;
     font-size: 3rem;
     font-family: inherit;
+    border: 1px solid transparent;
     height: 100%;
+    outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .btn--large:hover {
-    background-color: var(--color-pink);
-    color: var(--color-white);
+    background-color: var(--color-light-lilac);
+    color: var(--color-deep-purple);
 }
