@@ -156,6 +156,7 @@ class Calculator extends React.Component {
 
     render () {
         return (
+            
             <main className="calculator">
                 <EquationScreen equation={this.state.equation}/>
                 <ResultScreen currentValue={this.state.currentVal}/>
