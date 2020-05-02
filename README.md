@@ -7,6 +7,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Project Goal
 My goal is to design a functioning calculator using the ReactJs framework. I have designed a functioning calculator using vanilla JavaScript. However, it is still a work in progress. This project is one of the requirements for completing the **Front End Libraries** certification on FreeCodeCamp. 
 
+## Demo of App
+You can view my app [here](https://tlanetterose.github.io/JSCalculator-TLP/).
+
 ## Project User Stories
 Fulfill the below user stories and get all of the tests to pass. Give it your own personal style.
 
