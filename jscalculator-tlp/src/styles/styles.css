@@ -125,7 +125,7 @@ body {
 }
 
 .btn--large {
-    width: 50%;
+    width: 100%;
     color: var(--color-white);
     background-color: var(--color-deep-purple);
     transition: all .2s;
