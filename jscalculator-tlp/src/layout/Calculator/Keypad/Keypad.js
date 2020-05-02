@@ -1,14 +1,14 @@
 import React from 'react';
 
 import KeypadRow from './KeypadRow/KeypadRow';
-import LargeButton from '../../../components/Button/LargeButton/LargeButton';
+import LargeButton from '../../../components/LargeButton/LargeButton';
 
 class Keypad extends React.Component  {
     render(){
     return (
         <section className="keypad"> 
             {/* row #1 */ } 
-            <KeypadRow >
+            <KeypadRow>
                 <button id="seven"
                 className="btn"
                     onClick={this.props.numbers} value="7">7</button> 
@@ -34,7 +34,7 @@ class Keypad extends React.Component  {
             {/* row #3 */ } 
             <KeypadRow>
                 <button id="one" className="btn"
-                    onClick={this.props.number} value="1">1</button> 
+                    onClick={this.props.numbers} value="1">1</button> 
                 <button id="two" className="btn"
                     onClick={this.props.numbers} value="2">2</button> 
                 <button id="three" className="btn"
@@ -45,11 +45,11 @@ class Keypad extends React.Component  {
             {/* row #4 */ } 
             <KeypadRow>
                 <button id="zero" className="btn"
-                    onClick={this.props.number} value="0">0</button> 
+                    onClick={this.props.numbers} value="0">0</button> 
                 <button id="decimal" className="btn"
                     onClick={this.props.decimal} value=".">.</button> 
-                <button id="percent" className="btn"
-                    onClick={this.props.oper} value="%">%</button> 
+                <button id="equals" className="btn"
+                    onClick={this.props.equal} value="=">=</button> 
                 <button id="divide" className="btn"
                     onClick={this.props.oper} value="/">/</button> 
             </KeypadRow> 
@@ -57,9 +57,6 @@ class Keypad extends React.Component  {
             <KeypadRow>
                 <LargeButton id="clear" className="btn--large"
                     onClick={this.props.init} value="C">C 
-                    </LargeButton> 
-                <LargeButton id = "equals" className="btn--large"
-                    onClick={this.props.equal} value="=">= 
                     </LargeButton> 
             </KeypadRow> 
         </section>

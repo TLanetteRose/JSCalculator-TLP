@@ -1,5 +1,7 @@
 import React from 'react';
 import Keypad from './Keypad/Keypad';
+import {Header} from '../../components/Header/Header';
+import {Footer} from '../../components/Footer/Footer';
 
 
 // Variables:
@@ -145,29 +147,32 @@ class Calculator extends React.Component {
         }
     } //HandleDecimal
 
-    initalize(){
+    initialize(){
         this.setState({
             currentVal: "0",
             prevVal: "0", 
             equation: ""
         })
-    }
+    } //Initialize
 
 
     render () {
         return (
-            <main className="calculator">
-                <EquationScreen 
-                equation={this.state.equation.replace(/x/g, ".")}/>
-                <ResultScreen currentValue={this.state.currentVal} />
-                <Keypad 
-                    decimal={this.handleDecimal}
-                    equal={this.handleEqual}
-                    init={this.initialize}
-                    numbers={this.handleNumbers}
-                    oper={this.handleOperators}
-                />
-            </main>
+            <div className="container">
+                <Header />
+                <main className="calculator">
+                    <EquationScreen equation={this.state.equation}/>
+                    <ResultScreen currentValue={this.state.currentVal}/>
+                    <Keypad 
+                        decimal={this.handleDecimal}
+                        equal={this.handleEqual}
+                        init={this.initialize}
+                        numbers={this.handleNumbers}
+                        oper={this.handleOperators}
+                        />
+                </main>
+                <Footer />
+            </div>
         );
     }
 }
@@ -178,7 +183,8 @@ class Calculator extends React.Component {
 class ResultScreen extends React.Component {
     render(){
         return (
-            <div className="result-screen" id="display">
+            <div className = "result-screen"
+            id="display">
                 {this.props.currentValue}
             </div>
         );
@@ -186,8 +192,8 @@ class ResultScreen extends React.Component {
 }
 class EquationScreen extends React.Component {
     render() {
-        return ( <div className="formula-screen">
-            {this.props.formula}
+        return ( <div className="equation-screen">
+            {this.props.equation}
         </div>
         );
     }
