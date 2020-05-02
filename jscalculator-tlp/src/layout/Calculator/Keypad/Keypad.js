@@ -18,7 +18,7 @@ class Keypad extends React.Component  {
                      onClick={this.props.numbers} value="9"> 9 </button> 
                 <button id="add" className="btn"
                     type="operator"
-                    onClick={this.props.operators} value="+"> + </button> 
+                    onClick={this.props.oper} value="+"> + </button> 
             </KeypadRow> 
             {/* row #2 */ } 
             <KeypadRow>
@@ -29,7 +29,7 @@ class Keypad extends React.Component  {
                 <button id="six" className="btn"
                     onClick={this.props.numbers} value="6">6</button> 
                 <button id="subtract" className="btn" type="operator"
-                    onClick={this.props.operators} value="-"> - </button> 
+                    onClick={this.props.oper} value="-"> - </button> 
             </KeypadRow> 
             {/* row #3 */ } 
             <KeypadRow>
@@ -40,7 +40,7 @@ class Keypad extends React.Component  {
                 <button id="three" className="btn"
                      onClick={this.props.numbers} value="3">3</button> 
                 <button id="multiply" className="btn" type="operator"
-                     onClick={this.props.operators} value="*">*</button> 
+                     onClick={this.props.oper} value="*">*</button> 
             </KeypadRow> 
             {/* row #4 */ } 
             <KeypadRow>
@@ -49,17 +49,17 @@ class Keypad extends React.Component  {
                 <button id="decimal" className="btn"
                     onClick={this.props.decimal} value=".">.</button> 
                 <button id="percent" className="btn"
-                    onClick={this.props.operators} value="%">%</button> 
+                    onClick={this.props.oper} value="%">%</button> 
                 <button id="divide" className="btn"
-                    onClick={this.props.operators} value="/">/</button> 
+                    onClick={this.props.oper} value="/">/</button> 
             </KeypadRow> 
             {/* row #5 */ } 
             <KeypadRow>
                 <LargeButton id="clear" className="btn--large"
-                    onClick={this.props.initialize} value="C">C 
+                    onClick={this.props.init} value="C">C 
                     </LargeButton> 
                 <LargeButton id = "equals" className="btn--large"
-                    onClick={this.props.evaluate} value="=">= 
+                    onClick={this.props.equal} value="=">= 
                     </LargeButton> 
             </KeypadRow> 
         </section>
