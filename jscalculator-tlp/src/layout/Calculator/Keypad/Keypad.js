@@ -1,7 +1,7 @@
 import React from 'react';
 
 import KeypadRow from './KeypadRow/KeypadRow';
-import LargeButton from '../../../components/Button/LargeButton/LargeButton';
+import LargeButton from '../../../components/LargeButton/LargeButton';
 
 class Keypad extends React.Component  {
     render(){

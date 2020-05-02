@@ -1,13 +1,8 @@
-/*import React from 'react';
+import React from 'react';
 
-import ResultScreen from './ResultScreen/ResultScreen';
-import EquationScreen from './FormulaScreen/FormulaScreen';
-
-const screen = (props) => (
-    <section className="screen">
-        <ResultScreen>{props.currentVal}</ResultScreen>
-        <EquationScreen>{props.formula}</FormulaScreen> 
-    </section>
+export const Header = () => ( 
+    <div className="header-container">
+        <h1 className="header-title">Rebel-Cow React JS Calculator</h1>
+    </div>
+    
 );
-
-export default screen; */
